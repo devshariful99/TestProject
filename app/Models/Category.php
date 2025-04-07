@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
 
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'image',
+        'status',
+    ];
+
+    protected $casts = [
+        'status' => 'integer',
+    ];
+
     public function getStatusTitle()
     {
         switch ($this->status) {
